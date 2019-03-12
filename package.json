@@ -1,0 +1,19 @@
+{
+  "name": "itah-spantree-hello",
+  "version": "1.0.0",
+  "description": "This is a hello world style program written in node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eitah/itah-spantree-hello.git"
+  },
+  "author": "Eli Itah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eitah/itah-spantree-hello/issues"
+  },
+  "homepage": "https://github.com/eitah/itah-spantree-hello#readme"
+}

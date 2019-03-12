@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/eitah/itah-spantree-hello/issues"
   },
-  "homepage": "https://github.com/eitah/itah-spantree-hello#readme"
+  "homepage": "https://github.com/eitah/itah-spantree-hello#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "inquirer": "^6.2.2",
+    "shelljs": "^0.8.3"
+  }
 }

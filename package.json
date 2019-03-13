@@ -4,7 +4,8 @@
   "description": "This is a hello world style program written in node.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js --debug"
   },
   "repository": {
     "type": "git",

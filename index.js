@@ -184,8 +184,14 @@ async function takeTurn(myGame) {
     return true;
 }
 
+const newGamePrompt = {
+    type: 'confirm',
+    name: 'newGame',
+    message: 'Would you like to play a new game?'
+}
+
 async function startGame() {
-    console.log('welcome to the game!\n');
+    console.log('Welcome to the game!\n');
     const myGame = new Game();
     myGame.paintBoard();
     try {
@@ -197,9 +203,15 @@ async function startGame() {
         } while (!myGame.isBoardFull() && !myGame.checkForWinner());
         const outcome = myGame.checkForWinner();
         if (outcome) {
-            return console.log(outcome);
+            console.log(outcome);
+        } else {
+            console.log('If the code made it here there are no possible moves remaining board is Full! Goodbye!');
         }
-        console.log('If the code made it here the board is Full! Goodbye!');
+        const input = await inquirer.prompt(newGamePrompt);
+        if (input.newGame){
+            return startGame();
+        }
+        return console.log(`Congratulations on the ${outcome ? outcome.toLowerCase(): 'tie game'}! Goodbye.`)
     } catch (e) {
         console.log(`a bad thing happened ${e}`)
     }

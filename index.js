@@ -99,6 +99,7 @@ const Game = class {
             });
 
         // check for column
+        // this code is identical to the this.board with the exception of not populating the columns array, but it still needs refactor.
         columns.forEach((row) => {
             let whiteCount = 0;
             let redCount = 0;
@@ -131,19 +132,10 @@ const Game = class {
         });
 
         // check for diagonals
+        // i had this idea to reference lastMove to see if diagonal were possible, but idk.
+        // this is the hardest chore because the data format is very, very deviant from xy coordinates
         // in format row, column, example 1st 1st is 6, 0
-        console.log('this.lastMove', this.lastMove);
-        // const column = lastMove[1] + 1;
-        // const row = 6 - lastMove[0];
-        // const lowerBound = Math.max(0, column - 4)
-
-        // for(let i= lowerBound; lowerBound < i && i < upperbound; i++) {
-        // }
-        // index 
-        
-    //     let steps = [1, 2,3]
-    //     steps.forEach([lastMove[0] + step, lastMove[1] + 1]) {
-    //    }
+        // todo: what if i tried objects in the array instead of array of arrays. hmm.
 
         return result;
     }
@@ -173,7 +165,7 @@ async function takeTurn(myGame) {
         type: 'input',
         name: 'space',
         validate: (mySpace) => {
-
+            // validate runs before the input is accepted;
             if (mySpace <= myGame.numberOfColumns && mySpace > 0) {
                 return true;
             }
